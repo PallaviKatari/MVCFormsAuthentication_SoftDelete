@@ -12,6 +12,11 @@ using MVCFormsAuthentication.Models;
 
 namespace MVCFormsAuthentication.Controllers
 {
+    /// <summary>
+    /// The Authorize Attribute 
+    /// is the built-in attribute provided by MVC, 
+    /// which is used to authenticate a user.
+    /// </summary>
     [Authorize]
     public class EmployeesController : Controller
     {
@@ -95,7 +100,7 @@ namespace MVCFormsAuthentication.Controllers
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
-              
+
             }
 
             catch (DbEntityValidationException ex)
@@ -138,6 +143,11 @@ namespace MVCFormsAuthentication.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// As you can see, we call the SignOut method of the FormsAuthentication method 
+        /// to log out the user, and then we navigate the user to the Login action method.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();

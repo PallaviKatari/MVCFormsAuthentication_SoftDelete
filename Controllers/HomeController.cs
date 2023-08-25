@@ -33,6 +33,12 @@ namespace MVCFormsAuthentication.Controllers
 
                 if (IsValidUser)
                 {
+                    //As you can see in the Post method, first we validate the user,
+                    //and if the validation is a success, then we call the SetAuthCookie method
+                    //of FormsAuthentication class and then navigate the user to the
+                    //Index method of Employees Controller. The FormsAuthentication class
+                    //is available in System.Web.Security namespace.
+                    //We are passing the username as the first parameter to the SetAuthCookie method.
                     FormsAuthentication.SetAuthCookie(user.Username, false);
                     return RedirectToAction("Index", "Employees");
                 }

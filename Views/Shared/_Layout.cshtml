@@ -17,6 +17,11 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
+                @*The User.Identity.IsAuthenticated property returns true 
+                if the user is authenticated and the User.Identity.Name property 
+                returns the name of the authenticated user, which we provide to the 
+                SetAuthCookie method, which we implement in the Login Action method 
+                of the Home Controller.*@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li>@Html.ActionLink("Employee List", "Index", "Employees", new { @class = "nav-link" })</li>
